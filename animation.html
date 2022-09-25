@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="cerc">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="unda"></div>
+
+    <style>
+        body {
+            background-color: #050210;
+            height: 850px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cerc {
+            height: 800px;
+            width: 800px;
+            border-radius: 50%;
+            position: absolute;
+            background: linear-gradient(130deg, #fb5dad, #55fb9f, #b97aff);
+            animation: animatie_1 1s linear infinite;
+        }
+
+        @keyframes animatie_1 {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .cerc span {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+        }
+
+        .cerc span:nth-child(1) {
+            filter: blur(40px);
+        }
+
+        .cerc span:nth-child(2) {
+            filter: blur(50px);
+        }
+
+        .cerc::after {
+            content: "";
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            right: 50px;
+            bottom: 50px;
+            background: #050210;
+            border-radius: 50%;
+        }
+
+        .unda {
+            position: absolute;
+            text-align: center;
+            top: 50;
+            right: 50;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background-color: #2d3436;
+            opacity: 0;
+            z-index: 1;
+            pointer-events: none;
+            animation: unda 1s linear infinite;
+        }
+
+        @keyframes unda {
+            from {
+                opacity: 0.5;
+            }
+
+            to {
+                transform: scale(3);
+                opacity: 0;
+            }
+        }
+    </style>
+</body>
+</html>
